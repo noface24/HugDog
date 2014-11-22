@@ -1,0 +1,137 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg2"
+    tools:context=".AddActivity" >
+
+    <RadioGroup
+        android:id="@+id/radioGroup1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="79dp"
+        android:orientation="vertical" >
+
+        <RadioButton
+            android:id="@+id/btnMale"
+            android:layout_width="wrap_content"
+            android:layout_height="23dp"
+            android:layout_marginRight="14dp"
+            android:layout_marginTop="18dp"
+            android:layout_weight="0.05"
+            android:onClick="onRadioButtonClicked"
+            android:text="ตัวผู้" />
+
+        <RadioButton
+            android:id="@+id/btnFemale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/btnMale"
+            android:layout_below="@+id/btnMale"
+            android:layout_marginTop="25dp"
+            android:onClick="onRadioButtonClicked"
+            android:text="ตัวเมีย" />
+    </RadioGroup>
+
+    <ImageButton
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/btn_save" />
+
+    <EditText
+        android:id="@+id/editWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnSave"
+        android:layout_alignRight="@+id/radioGroup1"
+        android:layout_marginBottom="33dp"
+        android:layout_marginRight="10dp"
+        android:ems="10"
+        android:hint="น้ำหนัก"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/editBreed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editWeight"
+        android:layout_alignLeft="@+id/editWeight"
+        android:layout_marginBottom="13dp"
+        android:ems="10"
+        android:hint="พันธุ์" />
+
+    <EditText
+        android:id="@+id/editColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editBreed"
+        android:layout_alignLeft="@+id/editBreed"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:hint="สี" />
+
+    <TextView
+        android:id="@+id/txtAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView1"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_alignLeft="@+id/btnSave"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editColor"
+        android:layout_below="@+id/radioGroup1"
+        android:layout_marginTop="22dp"
+        android:ems="10"
+        android:hint="ชื่อสุนัข" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editColor"
+        android:layout_alignLeft="@+id/editColor"
+        android:layout_marginBottom="31dp"
+        android:text="อายุ"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editName"
+        android:layout_below="@+id/editName"
+        android:layout_marginTop="25dp"
+        android:text="วันเกิด"
+        android:textSize="15dp" />
+
+    <ImageButton
+        android:id="@+id/btnBirthday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editName"
+        android:layout_toRightOf="@+id/textView2"
+        android:onClick="showDatePickerDialog"
+        android:src="@drawable/btn_calendar2" />
+
+    <TextView
+        android:id="@+id/txtBirthday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_marginLeft="12dp"
+        android:layout_toRightOf="@+id/btnBirthday" />
+
+</RelativeLayout>
