@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg2"
+    android:background="@drawable/bgnew"
     android:onClick="btnTipClicked"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -18,7 +18,7 @@
         android:layout_marginLeft="61dp"
         android:layout_toRightOf="@+id/btnAdd"
         android:onClick="btnDogClicked"
-        android:src="@drawable/btn_dog" />
+        android:src="@drawable/btn_mypet" />
 
     <ImageButton
         android:id="@+id/btnVaccine"
@@ -37,7 +37,7 @@
         android:layout_marginBottom="64dp"
         android:layout_toLeftOf="@+id/btnDog"
         android:onClick="btnAlertClicked"
-        android:src="@drawable/btn_notification" />
+        android:src="@drawable/btn_alert" />
 
     <ImageButton
         android:id="@+id/btnTip"

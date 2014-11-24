@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
@@ -124,18 +125,34 @@ public class AddActivity extends Activity {
 			int year = c.get(Calendar.YEAR);
 			int month = c.get(Calendar.MONTH);
 			int day = c.get(Calendar.DAY_OF_MONTH);
+			
+			/*Toast.makeText(getActivity(), month, Toast.LENGTH_LONG)
+					.show();*/
 
 			// Create a new instance of DatePickerDialog and return it
+			
 			return new DatePickerDialog(getActivity(), this, year, month, day);
 		}
 
 		public void onDateSet(DatePicker view, int year, int month, int day) {
 			// Do something with the date chosen by the user
+			Calendar cal =  Calendar.getInstance();
+			
+			//month+=1;
 			TextView txtAge = (TextView) getActivity().getWindow().getDecorView().getRootView().findViewById(R.id.txtAge);
 			TextView txtBirth = (TextView) getActivity().getWindow().getDecorView().getRootView().findViewById(R.id.txtBirthday);
-		      txtBirth.setText( "วัน"+day + " เดือน " + month + "ปี " + year );
+		      txtBirth.setText( "วัน "+day + " เดือน " + (month+1) + " ปี " + year );
+		      int ageYear=0;
+		      int ageMonth=0;
+		      int ageDay=0;
+		      ageYear=cal.get(Calendar.YEAR)-year;
+		      ageMonth=cal.get(Calendar.MONTH);
+		      ageDay=cal.get(Calendar.DAY_OF_MONTH);
 		      
-		      txtAge.setText("");
+		    	 // txtAge.setText(ageYear+" ปี"+ ageMonth+" เดือน "+ageDay+" วัน");
+		      
+		      txtAge.setText(ageYear+" ปี "+ageMonth+" เดือน ");
+		     
 		      
 		}
 	}
@@ -144,5 +161,12 @@ public class AddActivity extends Activity {
 	    newFragment.show(getFragmentManager(), "datePicker");
 	}
 	
+
 	//end datepick
+	
+	public void onBackPressed(){
+	     // do something here and don't write super.onBackPressed()
+		//android.os.Process.killProcess(android.os.Process.myPid());
+    	finish();
+	}
 }
