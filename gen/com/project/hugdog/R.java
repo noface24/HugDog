@@ -1671,21 +1671,22 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f090030;
         public static final int action_mode_bar_stub=0x7f09002f;
         public static final int action_mode_close_button=0x7f090022;
-        public static final int action_settings=0x7f090054;
+        public static final int action_settings=0x7f090055;
         public static final int activity_chooser_view_content=0x7f090023;
         public static final int always=0x7f090014;
         public static final int beginning=0x7f09001b;
         public static final int bottom=0x7f09001e;
-        public static final int btnAdd=0x7f09004f;
-        public static final int btnAlert=0x7f090052;
+        public static final int btnAdd=0x7f090050;
+        public static final int btnAlert=0x7f090053;
         public static final int btnBirthday=0x7f09004c;
-        public static final int btnDog=0x7f09004e;
+        public static final int btnDog=0x7f09004f;
         public static final int btnFemale=0x7f090043;
-        public static final int btnHistory=0x7f090051;
+        public static final int btnHistory=0x7f090052;
         public static final int btnMale=0x7f090042;
         public static final int btnSave=0x7f090044;
-        public static final int btnTip=0x7f090053;
-        public static final int btnVaccine=0x7f090050;
+        public static final int btnTip=0x7f090054;
+        public static final int btnVaccine=0x7f090051;
+        public static final int calendarView=0x7f09004e;
         public static final int checkbox=0x7f09002b;
         public static final int collapseActionView=0x7f090015;
         public static final int decor_content_parent=0x7f090031;
@@ -1795,12 +1796,13 @@ containing a value of this type.
         public static final int abc_simple_dropdown_hint=0x7f030016;
         public static final int activity_add=0x7f030017;
         public static final int activity_alert=0x7f030018;
-        public static final int activity_dog=0x7f030019;
-        public static final int activity_history=0x7f03001a;
-        public static final int activity_main=0x7f03001b;
-        public static final int activity_tip=0x7f03001c;
-        public static final int activity_vaccine=0x7f03001d;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001e;
+        public static final int activity_alert_detail=0x7f030019;
+        public static final int activity_dog=0x7f03001a;
+        public static final int activity_history=0x7f03001b;
+        public static final int activity_main=0x7f03001c;
+        public static final int activity_tip=0x7f03001d;
+        public static final int activity_vaccine=0x7f03001e;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001f;
     }
     public static final class menu {
         public static final int main=0x7f0c0000;
@@ -1864,6 +1866,7 @@ containing a value of this type.
         public static final int hello_world=0x7f0a0010;
         public static final int title_activity_add=0x7f0a0012;
         public static final int title_activity_alert=0x7f0a0017;
+        public static final int title_activity_alert_detail=0x7f0a0018;
         public static final int title_activity_dog=0x7f0a0013;
         public static final int title_activity_history=0x7f0a0014;
         public static final int title_activity_tip=0x7f0a0016;

@@ -48,6 +48,10 @@
             android:name=".AlertActivity"
             android:label="@string/title_activity_alert" >
         </activity>
+        <activity
+            android:name=".AlertDetailActivity"
+            android:label="@string/title_activity_alert_detail" >
+        </activity>
     </application>
 
 </manifest>

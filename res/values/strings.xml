@@ -10,5 +10,6 @@
     <string name="title_activity_vaccine">VaccineActivity</string>
     <string name="title_activity_tip">TipActivity</string>
     <string name="title_activity_alert">AlertActivity</string>
+    <string name="title_activity_alert_detail">AlertDetailActivity</string>
 
 </resources>
