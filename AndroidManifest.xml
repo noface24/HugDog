@@ -9,6 +9,9 @@
         android:targetSdkVersion="21" />
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -51,6 +54,22 @@
         <activity
             android:name=".AlertDetailActivity"
             android:label="@string/title_activity_alert_detail" >
+        </activity>
+        <activity
+            android:name=".DetailAlertActivity"
+            android:label="@string/title_activity_detail_alert" >
+        </activity>
+        <activity
+            android:name=".NoseBleedActivity"
+            android:label="@string/title_activity_nose_bleed" >
+        </activity>
+        <activity
+            android:name=".FeedActivity"
+            android:label="@string/title_activity_feed" >
+        </activity>
+        <activity
+            android:name=".DetailTipActivity"
+            android:label="@string/title_activity_detail_tip" >
         </activity>
     </application>
 

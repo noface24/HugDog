@@ -6,6 +6,7 @@ import java.util.Date;
 import android.app.Activity;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.location.GpsStatus.Listener;
 import android.os.Bundle;
 import android.view.Menu;
@@ -31,7 +32,13 @@ public class AlertActivity extends Activity {
 				// TODO Auto-generated method stub
 				long date;
 				date = calendarView.getDate();
-				Toast.makeText(view.getContext(), "Year=" + year + " Month=" + (month+1) + " Day=" + dayOfMonth, Toast.LENGTH_LONG).show();
+				month=month+1;
+				Toast.makeText(view.getContext(), "Year=" + year + " Month=" + (month) + " Day=" + dayOfMonth, Toast.LENGTH_LONG).show();
+				Intent i = new Intent(getBaseContext(),AlertDetailActivity.class);
+				i.putExtra("month",month);
+				i.putExtra("year",year);
+				i.putExtra("day",dayOfMonth);
+		    	startActivity(i);
 			}
 		});
 			

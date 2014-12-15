@@ -5,4 +5,81 @@
     android:background="#00aeac"
     tools:context="${relativePackage}.${activityClass}" >
 
+    <EditText
+        android:id="@+id/editTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="68dp"
+        android:ems="10"
+        android:hint="รายละเอียด">         
+        <requestFocus />
+        </EditText>
+
+    <TextView
+        android:id="@+id/txtD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editTitle"
+        android:layout_below="@+id/editTitle"
+        android:layout_marginTop="24dp"
+        android:text="วันที่"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/txtDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/txtD"
+        android:layout_alignBottom="@+id/txtD"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@+id/txtD"
+        android:text="..."
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtD"
+        android:layout_below="@+id/txtD"
+        android:layout_marginTop="43dp"
+        android:text="เวลา"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/editPlace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="54dp"
+        android:ems="10"
+        android:hint="สถานที่" >
+
+
+    </EditText>
+
+    <TextView
+        android:id="@+id/txtTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editPlace"
+        android:layout_alignLeft="@+id/txtDate"
+        android:onClick="txtTimeClicked"
+        android:text="08:00"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ImageButton
+        android:id="@+id/imageButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editPlace"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="44dp"
+        android:layout_toRightOf="@+id/txtTime"
+        android:src="@drawable/btn_save" />
+
 </RelativeLayout>

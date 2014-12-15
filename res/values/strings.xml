@@ -11,5 +11,11 @@
     <string name="title_activity_tip">TipActivity</string>
     <string name="title_activity_alert">AlertActivity</string>
     <string name="title_activity_alert_detail">AlertDetailActivity</string>
+    <string name="title_activity_detail_alert">DetailAlertActivity</string>
+    <string name="title_activity_nose_bleed">NoseBleedActivity</string>
+    <string name="title_activity_feed">FeedActivity</string>
+    <string name="title_activity_detail_tip">DetailTipActivity</string>
+    <string name="cannot">Cannot</string>
+    <string name="album_name">Image</string>
 
 </resources>
