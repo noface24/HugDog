@@ -13,25 +13,24 @@ public class TipActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_tip);
-		
+
 	}
-	
+
 	public void tip1Clicked(View v) {
-		Intent i = new Intent(getBaseContext(),DetailTipActivity.class);
-		i.putExtra("tip","1");
-		
-    	startActivity(i);
-    	;
-    	
-		
+		Intent i = new Intent(getBaseContext(), DetailTipActivity.class);
+		i.putExtra("tip", "1");
+
+		startActivity(i);
+		;
+
 	}
+
 	public void tip2Clicked(View v) {
-		Intent i = new Intent(getBaseContext(),DetailTipActivity.class);
-		i.putExtra("tip","2");
-		
-    	startActivity(i);
-    	;
-    	
-		
+		Intent i = new Intent(getBaseContext(), DetailTipActivity.class);
+		i.putExtra("tip", "2");
+
+		startActivity(i);
+		;
+
 	}
 }

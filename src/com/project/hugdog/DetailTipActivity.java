@@ -18,17 +18,17 @@ public class DetailTipActivity extends Activity {
 		tipNumber = getIntent().getStringExtra("tip");
 		imgTip = (ImageView) findViewById(R.id.imgTip);
 		chooseTip();
-		Toast.makeText(getApplicationContext(), tipNumber,
-				Toast.LENGTH_LONG).show();
+		/*Toast.makeText(getApplicationContext(), tipNumber, Toast.LENGTH_LONG)
+				.show();
+				*/
 	}
-	
-	private void chooseTip(){
-		if(tipNumber.equals("1")){
+
+	private void chooseTip() {
+		if (tipNumber.equals("1")) {
 			imgTip.setImageResource(R.drawable.nosebleed);
-		}
-		else if(tipNumber.equals("2")){
+		} else if (tipNumber.equals("2")) {
 			imgTip.setImageResource(R.drawable.feed);
 		}
 	}
-	
+
 }

@@ -31,14 +31,14 @@ public class AgeCalculation {
 	}
 
 	public int calcualteYear() {
-			resYear = endYear - startYear;
-		    if (endYear < startYear){
-		    	resYear--; 
-		    }
-		    Integer ageInt = new Integer(resYear);
-		    //String ageS = ageInt.toString();
+		resYear = endYear - startYear;
+		if (endYear < startYear) {
+			resYear--;
+		}
+		Integer ageInt = new Integer(resYear);
+		// String ageS = ageInt.toString();
 
-		    return resYear;  
+		return resYear;
 
 	}
 
@@ -56,17 +56,17 @@ public class AgeCalculation {
 	public int calcualteDay() {
 
 		if (endDay >= startDay) {
-			resDay = endDay-startDay ;// ;
-		}	else {
+			resDay = endDay - startDay;// ;
+		} else {
 			resDay = endDay - startDay;
 			resDay = 30 + resDay;
-		    resMonth--;
+			resMonth--;
 		}
 		return resDay;
 	}
 
 	public String getResult() {
-		return resYear+" ปี "+resMonth+" เดือน "+resDay +" วั น" ;
+		return resYear + " ปี " + resMonth + " เดือน " + resDay + " วั น";
 	}
 
 }

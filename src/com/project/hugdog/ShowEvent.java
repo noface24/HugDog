@@ -65,8 +65,9 @@ public class ShowEvent extends Activity implements OnClickListener {
 	        }
 			r = RingtoneManager.getRingtone(getApplicationContext(), notif);
 			r.play();
-			Vibrator vibrator = (Vibrator) 
-					getSystemService(Context.VIBRATOR_SERVICE);
+			// Vibrate the mobile phone
+			Vibrator vibrator = (Vibrator) this.getApplicationContext()
+					.getSystemService(Context.VIBRATOR_SERVICE);
 			vibrator.vibrate(2000);
 	 	    
 	 	    

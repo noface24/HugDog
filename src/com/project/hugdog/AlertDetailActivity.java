@@ -4,8 +4,6 @@ import java.util.Calendar;
 
 
 
-
-
 import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.Dialog;
@@ -27,15 +25,17 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-
-
 public class AlertDetailActivity extends Activity {
-	// The app's AlarmManager, which provides access to the system alarm services.
-    private AlarmManager alarmMgr;
-    // The pending intent that is triggered when the alarm fires.
-    private PendingIntent alarmIntent;
-	final static int RQS_1 = 1;
-    
+	// The app's AlarmManager, which provides access to the system alarm
+	// services.
+	private AlarmManager alarmMgr;
+	// The pending intent that is triggered when the alarm fires.
+	private PendingIntent alarmIntent;
+	final static int RQS_2 = 2;
+	private static int month;
+	private static int day;
+	private static int year;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -44,18 +44,20 @@ public class AlertDetailActivity extends Activity {
 		TextView txtDate = (TextView) findViewById(R.id.txtDate);
 		EditText editTitle = (EditText) findViewById(R.id.editTitle);
 		EditText editPlace = (EditText) findViewById(R.id.editPlace);
-		
+
 		Bundle b = getIntent().getExtras();
-		int month = b.getInt("month");
-		int day = b.getInt("day");
-		int year = b.getInt("year");
+		month = b.getInt("month");
+		day = b.getInt("day");
+		year = b.getInt("year");
+		
+		
 
 		txtDate.setText(Integer.toString(day) + "/" + Integer.toString(month)
 				+ "/" + Integer.toString(year));
 
 	}
 
-	public static class TimePickerFragment extends DialogFragment implements
+	public class TimePickerFragment extends DialogFragment implements 
 			TimePickerDialog.OnTimeSetListener {
 
 		@Override
@@ -70,43 +72,63 @@ public class AlertDetailActivity extends Activity {
 					DateFormat.is24HourFormat(getActivity()));
 		}
 
-		 
 		public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
 			// Do something with the time chosen by the user
-			TextView txtTime = (TextView) getActivity().getWindow().getDecorView().getRootView().findViewById(R.id.txtTime);
+			TextView txtTime = (TextView) getActivity().getWindow()
+					.getDecorView().getRootView().findViewById(R.id.txtTime);
+
+			txtTime.setText(hourOfDay + ":" + minute);
+			// SampleAlarmReceiver.setAlarm();
+			////set alert 
 			
-			txtTime.setText(hourOfDay+":"+minute);
-			//SampleAlarmReceiver.setAlarm();
-			
-			
-			
-			
-			
+			Calendar calNow = Calendar.getInstance();
+			Calendar calSet = (Calendar) calNow.clone();
+			calSet.set(Calendar.MONTH,month-1);
+			calSet.set(Calendar.DAY_OF_MONTH,day);
+			calSet.set(Calendar.YEAR,year);
+			calSet.set(Calendar.HOUR_OF_DAY, hourOfDay);
+			calSet.set(Calendar.MINUTE, minute);
+			calSet.set(Calendar.SECOND, 0);
+			calSet.set(Calendar.MILLISECOND, 0);
+			/*
+			Toast.makeText(
+					view.getContext(),
+					calSet.toString(), Toast.LENGTH_LONG).show();
+			/*
+			Toast.makeText(
+					view.getContext(),
+					"Year=" + year + " Month=" + (month) + " Day="
+							+ day, Toast.LENGTH_LONG).show();
+			*/
+			///end set alert
+			setAlarm(calSet);
 		}
-		
+		public void setAlarm(Calendar targetCal) {
+
+			/*
+			 * textAlarmPrompt.setText( "\n\n***\n" + "Set Alarm @ " +
+			 * targetCal.getTime() + "\n" + "***\n");
+			 */
+			
+			Toast.makeText(getBaseContext(),
+					String.valueOf(targetCal.getTimeInMillis()), Toast.LENGTH_LONG).show();
+			Intent intent = new Intent(getBaseContext(), AlarmReceiver.class);
+			PendingIntent pendingIntent = PendingIntent.getBroadcast(getBaseContext(), RQS_2, intent, 0);
+			AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
+			//alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()+ (2 * 1000), pendingIntent);
+			alarmManager.set(AlarmManager.RTC_WAKEUP, targetCal.getTimeInMillis(), pendingIntent);
+
+		}
+
 	}
 
 	public void txtTimeClicked(View v) {
 		DialogFragment newFragment = new TimePickerFragment();
 		newFragment.show(getFragmentManager(), "timePicker");
-		
-	}
-	
-	public void setAlarm(Calendar targetCal){
 
-		/*textAlarmPrompt.setText(
-				"\n\n***\n"
-				+ "Set Alarm @ " + targetCal.getTime() + "\n"
-				+ "***\n");
-		*/
-		
-		Intent intent = new Intent(getBaseContext(), AlarmReceiver.class);
-		PendingIntent pendingIntent = PendingIntent.getBroadcast(getBaseContext(), RQS_1, intent, 0);
-		AlarmManager alarmManager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
-		alarmManager.set(AlarmManager.RTC_WAKEUP, targetCal.getTimeInMillis(), pendingIntent);
-		
 	}
-	///
+
 	
-	
+	// /
+
 }

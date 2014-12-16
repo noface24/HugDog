@@ -17,5 +17,6 @@
     <string name="title_activity_detail_tip">DetailTipActivity</string>
     <string name="cannot">Cannot</string>
     <string name="album_name">Image</string>
+    <string name="title_activity_dog_detail">DogDetailActivity</string>
 
 </resources>

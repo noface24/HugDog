@@ -76,10 +76,9 @@
         android:id="@+id/imageButton1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editPlace"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="44dp"
-        android:layout_toRightOf="@+id/txtTime"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="13dp"
         android:src="@drawable/btn_save" />
 
 </RelativeLayout>

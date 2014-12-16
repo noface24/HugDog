@@ -1,8 +1,5 @@
 package com.project.hugdog;
 
-
-
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -36,40 +33,40 @@ public class MainActivity extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+
 	public void btnAddClicked(View v) {
-    	Intent i = new Intent(this, AddActivity.class);
-    	startActivity(i);
-    	
-		
+		Intent i = new Intent(this, AddActivity.class);
+		startActivity(i);
+
 	}
+
 	public void btnAlertClicked(View v) {
-    	Intent i = new Intent(this, AlertActivity.class);
-    	startActivity(i);
-    	
-		
+		Intent i = new Intent(this, AlertActivity.class);
+		startActivity(i);
+
 	}
+
 	public void btnDogClicked(View v) {
-    	Intent i = new Intent(this, DogActivity.class);
-    	startActivity(i);
-    	
-		
+		Intent i = new Intent(this, DogActivity.class);
+		startActivity(i);
+
 	}
+
 	public void btnHistoryClicked(View v) {
-    	Intent i = new Intent(this, HistoryActivity.class);
-    	startActivity(i);
-    	
-		
+		Intent i = new Intent(this, HistoryActivity.class);
+		startActivity(i);
+
 	}
+
 	public void btnTipClicked(View v) {
-    	Intent i = new Intent(this, TipActivity.class);
-    	startActivity(i);
-    	
-		
+		Intent i = new Intent(this, TipActivity.class);
+		startActivity(i);
+
 	}
+
 	public void btnVaccineClicked(View v) {
-    	Intent i = new Intent(this, VaccineActivity.class);
-    	startActivity(i);
-    	
-		
+		Intent i = new Intent(this, VaccineActivity.class);
+		startActivity(i);
+
 	}
 }

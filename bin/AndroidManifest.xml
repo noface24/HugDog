@@ -18,6 +18,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+       
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" >
@@ -70,6 +71,17 @@
         <activity
             android:name=".DetailTipActivity"
             android:label="@string/title_activity_detail_tip" >
+        </activity>
+        <activity android:name=".ShowEvent" >
+        </activity>
+
+        <receiver
+            android:name=".AlarmReceiver"
+            android:process=":remote" />
+
+        <activity
+            android:name=".DogDetailActivity"
+            android:label="@string/title_activity_dog_detail" >
         </activity>
     </application>
 
