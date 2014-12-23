@@ -19,7 +19,6 @@ public class TipActivity extends Activity {
 	public void tip1Clicked(View v) {
 		Intent i = new Intent(getBaseContext(), DetailTipActivity.class);
 		i.putExtra("tip", "1");
-
 		startActivity(i);
 		;
 
@@ -28,7 +27,13 @@ public class TipActivity extends Activity {
 	public void tip2Clicked(View v) {
 		Intent i = new Intent(getBaseContext(), DetailTipActivity.class);
 		i.putExtra("tip", "2");
+		startActivity(i);
+		;
 
+	}
+	public void tip3Clicked(View v) {
+		Intent i = new Intent(getBaseContext(), DetailTipActivity.class);
+		i.putExtra("tip", "3");
 		startActivity(i);
 		;
 

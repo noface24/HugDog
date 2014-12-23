@@ -54,9 +54,11 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/btnAlert"
         android:layout_marginBottom="58dp"
-        android:layout_toLeftOf="@+id/btnDog"
-        android:onClick="btnHistoryClicked"
-        android:src="@drawable/btn_history" />
+        android:layout_toLeftOf="@+id/btnDog"     
+        android:src="@drawable/btn_history"
+        android:onClick="btnHistoryClicked" />
+        <!--   android:onClick="showDatePickerDialog"-->
+     
 
     <ImageButton
         android:id="@+id/btnAdd"

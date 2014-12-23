@@ -22,7 +22,7 @@
             android:paddingLeft="20dp"
             android:paddingRight="10dp"
             android:src="@drawable/tiplist1"
-            android1:onClick="tip1Clicked" />
+            android:onClick="tip1Clicked" />
 
         <ImageView
             android:id="@+id/imgTip2"
@@ -31,7 +31,17 @@
             android:paddingLeft="20dp"
             android:paddingRight="10dp"
             android:src="@drawable/tiplist2"
-            android1:onClick="tip2Clicked" />
+            android:onClick="tip2Clicked" />
+
+        <ImageView
+            android:id="@+id/imgTip3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="tip3Clicked"
+            android:paddingLeft="20dp"
+            android:paddingRight="10dp"
+            android:src="@drawable/tiplist3"
+            android1:visibility="invisible" />
 
 "
     </LinearLayout>

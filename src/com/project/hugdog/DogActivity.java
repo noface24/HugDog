@@ -64,6 +64,7 @@ public class DogActivity extends ListActivity {
 		ArrayAdapter adapter = new ArrayAdapter(this,
 				android.R.layout.simple_list_item_2, android.R.id.text1, values);
 		setListAdapter(adapter);
+		
 	}
 
 	@Override
@@ -75,18 +76,14 @@ public class DogActivity extends ListActivity {
 		} else {
 			filename = path + File.separator + filename;
 		}
-		if (new File(filename).isDirectory()) {
-			Intent intent = new Intent(this, DogActivity.class);
-			intent.putExtra("path", filename);
-			startActivity(intent);
-		} else {
+		
 			Intent i = new Intent(this, DogDetailActivity.class);
 			//intent.putExtra("path", filename);
 			i.putExtra("path", filename);
 			startActivity(i);
-			/*Toast.makeText(this, filename + " is not a directory",
-					Toast.LENGTH_LONG).show();*/
-		}
+			finish();
+			
+		
 	}
 
 }

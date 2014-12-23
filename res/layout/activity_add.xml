@@ -2,15 +2,141 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00aeac"
+    android:background="@drawable/bgnew"
     tools:context=".AddActivity" >
 
-    <RadioGroup
-        android:id="@+id/radioGroup1"
+    <ImageButton
+        android:id="@+id/btnSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/editName"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@null"
+        android:layout_marginBottom="15dp"
+        android:src="@drawable/btn_save" />
+
+    <EditText
+        android:id="@+id/editColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editBreed"
+        android:layout_alignLeft="@+id/editBreed"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:hint="สี"
+        android:textSize="20dp" 
+        android:singleLine="true"
+        android:imeOptions="actionNext"/>
+
+    <TextView
+        android:id="@+id/txtAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/txtTest"
+        android:layout_alignBottom="@+id/txtTest"
+        android:layout_alignLeft="@+id/btnSave"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/txtBirthday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/txtTime"
+        android:layout_marginLeft="12dp"
+        android:layout_toRightOf="@+id/btnBirthday" />
+
+    <EditText
+        android:id="@+id/editBreed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editWeight"
+        android:layout_alignLeft="@+id/editWeight"
+        android:layout_marginBottom="17dp"
+        android:ems="10"
+        android:hint="พันธุ์"
+        android:textSize="20dp"
+        android:singleLine="true" 
+       	android:imeOptions="actionNext" />
+
+    <TextView
+        android:id="@+id/txtTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editColor"
+        android:layout_alignLeft="@+id/editColor"
+        android:layout_marginBottom="10dp"
+        android:text="อายุ"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/editWeight"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnSave"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="56dp"
+        android:ems="10"
+        android:hint="น้ำหนัก"
+        android:inputType="number"
+        android:textSize="20dp" 
+        android:singleLine="true"
+        android:imeOptions="actionDone"/>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/editWeight"
+        android:layout_alignBottom="@+id/editWeight"
+        android:layout_marginLeft="13dp"
+        android:layout_toRightOf="@+id/editWeight"
+        android:text="กิโลกรัม"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/txtTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txtAge"
+        android:layout_alignLeft="@+id/txtTest"
+        android:layout_marginBottom="26dp"
+        android:text="วันเกิด"
+        android:textSize="20dp" />
+
+    <ImageButton
+        android:id="@+id/btnBirthday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txtAge"
+        android:layout_alignLeft="@+id/txtAge"
+        android:layout_marginBottom="15dp"
+        android:onClick="showDatePickerDialog"
+        android:src="@drawable/btn_calendar2" />
+
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnBirthday"
+        android:layout_alignLeft="@+id/txtTime"
+        android:ems="10"
+        android:hint="ชื่อสุนัข"
+        android:textSize="20dp" 
+        android:singleLine="true"
+        android:imeOptions="actionDone">
+
+        <requestFocus />
+    </EditText>
+
+    <RadioGroup
+        android:id="@+id/radioGenderGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editName"
+        android:layout_marginBottom="9dp"
+        android:layout_marginLeft="50dp"
+      
         android:orientation="vertical" >
 
         <RadioButton
@@ -34,141 +160,6 @@
             android:onClick="onRadioButtonClicked"
             android:text="ตัวเมีย"
             android:textSize="20dp" />
-
     </RadioGroup>
-
-    <ImageButton
-        android:id="@+id/btnSave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/btn_save" />
-
-    <EditText
-        android:id="@+id/editColor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/editBreed"
-        android:layout_alignLeft="@+id/editBreed"
-        android:layout_marginBottom="10dp"
-        android:ems="10"
-        android:hint="สี"
-        android:textSize="20dp" />
-
-    <TextView
-        android:id="@+id/txtAge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/txtTest"
-        android:layout_alignBottom="@+id/txtTest"
-        android:layout_alignLeft="@+id/btnSave"
-        android:textSize="15dp" />
-
-    <EditText
-        android:id="@+id/editName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editColor"
-        android:layout_below="@+id/radioGroup1"
-        android:layout_marginTop="22dp"
-        android:ems="10"
-        android:hint="ชื่อสุนัข"
-        android:textSize="20dp" >
-
-        <requestFocus />
-    </EditText>
-
-    <TextView
-        android:id="@+id/txtTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editName"
-        android:layout_below="@+id/editName"
-        android:layout_marginTop="25dp"
-        android:text="วันเกิด"
-        android:textSize="20dp" />
-
-    <TextView
-        android:id="@+id/txtBirthday"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/txtTime"
-        android:layout_marginLeft="12dp"
-        android:layout_toRightOf="@+id/btnBirthday" />
-
-    <ImageButton
-        android:id="@+id/btnBirthday"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/txtAge"
-        android:layout_below="@+id/editName"
-        android:onClick="showDatePickerDialog"
-        android:src="@drawable/btn_calendar2" />
-
-    <EditText
-        android:id="@+id/editBreed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/editWeight"
-        android:layout_alignLeft="@+id/editWeight"
-        android:layout_marginBottom="17dp"
-        android:ems="10"
-        android:hint="พันธุ์"
-        android:textSize="20dp" />
-
-    <TextView
-        android:id="@+id/txtTest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/editColor"
-        android:layout_alignLeft="@+id/editColor"
-        android:layout_marginBottom="10dp"
-        android:text="อายุ"
-        android:textSize="20dp" />
-
-    <ImageButton
-        android:id="@+id/btnIntend"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/editName"
-        android:layout_alignRight="@+id/txtTime"
-        android:layout_marginRight="12dp"
-        android:src="@drawable/btn_cam" />
-
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="9dp"
-        android:visibility="visible"
-        android:layout_marginTop="15dp"
-        android:layout_toRightOf="@+id/txtTest"
-        android:src="@drawable/ic_launcher11" />
-
-    <EditText
-        android:id="@+id/editWeight"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/btnSave"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="30dp"
-        android:layout_marginLeft="56dp"
-        android:ems="10"
-        android:hint="น้ำหนัก"
-        android:inputType="number"
-        android:textSize="20dp" />
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/editWeight"
-        android:layout_alignBottom="@+id/editWeight"
-        android:layout_marginLeft="13dp"
-        android:layout_toRightOf="@+id/editWeight"
-        android:text="กิโลกรัม"
-        android:textSize="20dp" />
 
 </RelativeLayout>

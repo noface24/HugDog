@@ -5,11 +5,20 @@
     android:background="#00aeac"
     tools:context="${relativePackage}.${activityClass}" >
 
+    <Button
+        android:id="@+id/dispbut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:text="Display Event" />
+    <!--  
     <CalendarView
         android:id="@+id/calendarView1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true" />
-
+	-->
 </RelativeLayout>

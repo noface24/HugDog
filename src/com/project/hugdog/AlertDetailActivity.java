@@ -1,5 +1,9 @@
 package com.project.hugdog;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.Calendar;
 
 
@@ -21,6 +25,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -50,12 +55,23 @@ public class AlertDetailActivity extends Activity {
 		day = b.getInt("day");
 		year = b.getInt("year");
 		
-		
+		final ImageButton btnSave = (ImageButton) findViewById(R.id.btnSave);
 
 		txtDate.setText(Integer.toString(day) + "/" + Integer.toString(month)
 				+ "/" + Integer.toString(year));
+		
+		// Perform action on click
+					btnSave.setOnClickListener(new View.OnClickListener() {
+						public void onClick(View v) {
+								finish();
+
+						}
+					});
+					// end save button
 
 	}
+	
+	
 
 	public class TimePickerFragment extends DialogFragment implements 
 			TimePickerDialog.OnTimeSetListener {
@@ -127,8 +143,8 @@ public class AlertDetailActivity extends Activity {
 		newFragment.show(getFragmentManager(), "timePicker");
 
 	}
-
+///////Time
 	
-	// /
+	
 
 }

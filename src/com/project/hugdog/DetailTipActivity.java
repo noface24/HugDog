@@ -29,6 +29,9 @@ public class DetailTipActivity extends Activity {
 		} else if (tipNumber.equals("2")) {
 			imgTip.setImageResource(R.drawable.feed);
 		}
+		else if (tipNumber.equals("3")) {
+			imgTip.setImageResource(R.drawable.dont);
+		}
 	}
 
 }
