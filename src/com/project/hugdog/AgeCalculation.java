@@ -2,7 +2,9 @@ package com.project.hugdog;
 
 import java.util.Calendar;
 
+
 public class AgeCalculation {
+	
 	private int startYear;
 	private int startMonth;
 	private int startDay;
@@ -12,7 +14,7 @@ public class AgeCalculation {
 	private int resYear;
 	private int resMonth;
 	private int resDay;
-
+	
 	public String getCurrentDate() {
 		Calendar c = Calendar.getInstance();
 		endYear = c.get(Calendar.YEAR);

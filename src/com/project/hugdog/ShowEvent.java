@@ -3,14 +3,15 @@ package com.project.hugdog;
 import android.app.Activity;
 import android.app.KeyguardManager;
 import android.app.KeyguardManager.KeyguardLock;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.PowerManager;
-import android.os.Vibrator;
 import android.os.PowerManager.WakeLock;
+import android.os.Vibrator;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -46,9 +47,6 @@ public class ShowEvent extends Activity implements OnClickListener {
 	 	
 	 	@Override
 		public void onClick(View v) {
-	 		if(v.getId() == R.id.btnStop){
-	 			this.finish();
-	 		}			
 		}
 	 	
 	 	@Override
@@ -56,7 +54,7 @@ public class ShowEvent extends Activity implements OnClickListener {
 	 	   
 	 	    super.onResume();
 	 	    wl.acquire();//must call this!
-	 	   Uri notif = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE);
+	 	  /* Uri notif = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE);
 	        if(notif==null){ // check ว่า ได้ตั้งเสียงเรียกเข้าไว้หรือไม่
 	        	notif = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
 	        	if(notif==null){ //  check ว่า ได้ตั้งเสียงปลุกไว้หรือไม่
@@ -68,7 +66,7 @@ public class ShowEvent extends Activity implements OnClickListener {
 			// Vibrate the mobile phone
 			Vibrator vibrator = (Vibrator) this.getApplicationContext()
 					.getSystemService(Context.VIBRATOR_SERVICE);
-			vibrator.vibrate(2000);
+			vibrator.vibrate(2000);*/
 	 	    
 	 	    
 	 	}
@@ -76,10 +74,15 @@ public class ShowEvent extends Activity implements OnClickListener {
 	 	@Override
 		public void onPause(){
 			super.onPause();
-			wl.release();
+			/*wl.release();
 			if(r.isPlaying()){
 				r.stop();
-			}
+			}*/
 		}
+	 	public static void cancelNotification(Context ctx, int notifyId) {
+	 	    String ns = Context.NOTIFICATION_SERVICE;
+	 	    NotificationManager nMgr = (NotificationManager) ctx.getSystemService(ns);
+	 	    nMgr.cancel(0);
+	 	}
 
 }

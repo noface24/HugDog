@@ -14,14 +14,12 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.READ_CALENDAR" />
     <uses-permission android:name="android.permission.WRITE_CALENDAR" />
-    
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-       
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" >
@@ -85,6 +83,51 @@
         <activity
             android:name=".DogDetailActivity"
             android:label="@string/title_activity_dog_detail" >
+        </activity>
+        <activity
+            android:name=".EditActivity"
+            android:label="@string/title_activity_edit" >
+        </activity>
+        <activity
+            android:name=".CalVacActivity"
+            android:label="@string/title_activity_cal_vac" >
+        </activity>
+        <activity
+            android:name=".VacCalActivity"
+            android:label="@string/title_activity_vac_cal" >
+        </activity>
+        <activity
+            android:name=".HisCalActivity"
+            android:label="@string/title_activity_his_cal" >
+        </activity>
+        <activity
+            android:name=".CustomHisActivity"
+            android:label="@string/title_activity_custom_his" >
+        </activity>
+        <activity
+            android:name=".HisAddActivity"
+            android:label="@string/title_activity_his_add" >
+        </activity>
+        <activity
+            android:name=".HisEditActivity"
+            android:label="@string/title_activity_his_edit" >
+        </activity>
+        <activity
+            android:name=".VacAlertActivity"
+            android:label="@string/title_activity_vac_alert" >
+        </activity>
+        <activity
+            android:name=".PostActivity"
+            android:label="@string/title_activity_post" >
+        </activity>
+        <activity android:name=".AndroidDatabaseManager" />
+        <activity
+            android:name=".HisListActivity"
+            android:label="@string/title_activity_his_list" >
+        </activity>
+        <activity
+            android:name=".VacComActivity"
+            android:label="@string/title_activity_vac_com" >
         </activity>
     </application>
 

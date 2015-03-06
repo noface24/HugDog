@@ -3,8 +3,6 @@ package com.project.hugdog;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 
 public class TipActivity extends Activity {
@@ -34,6 +32,20 @@ public class TipActivity extends Activity {
 	public void tip3Clicked(View v) {
 		Intent i = new Intent(getBaseContext(), DetailTipActivity.class);
 		i.putExtra("tip", "3");
+		startActivity(i);
+		;
+
+	}
+	public void tip4Clicked(View v) {
+		Intent i = new Intent(getBaseContext(), DetailTipActivity.class);
+		i.putExtra("tip", "4");
+		startActivity(i);
+		;
+
+	}
+	public void tip5Clicked(View v) {
+		Intent i = new Intent(getBaseContext(), DetailTipActivity.class);
+		i.putExtra("tip", "5");
 		startActivity(i);
 		;
 

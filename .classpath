@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
-	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
-	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
-	<classpathentry kind="lib" path="D:/project/commons-io-2.4/commons-io-2.4.jar">
-		<attributes>
-			<attribute name="javadoc_location" value="jar:file:/D:/project/commons-io-2.4/commons-io-2.4-javadoc.jar!/"/>
-			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="D:/project/commons-io-2.4"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="D:/project/HugDog/library/libs/android-support-v4.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/project/HugDog/library/libs/date4j.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

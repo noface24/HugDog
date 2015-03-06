@@ -3,13 +3,8 @@ package com.project.hugdog;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 import android.app.Activity;
@@ -19,6 +14,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -26,25 +22,30 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.project.hugdog.DBClass;
+import com.project.hugdog.DBClass.sDog;
+
+
 public class DogDetailActivity extends Activity {
-	private String imgName,name,birth;
+	private String imgName,name,gender,color,breed,weight;
+	String birth;
 	private static AgeCalculation age = null;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_dog_detail);
+		
+		final DBClass myDb = new DBClass(this);
+		
 		final TextView txtName = (TextView) findViewById(R.id.txtName);
 		final TextView txtColor = (TextView) findViewById(R.id.txtColor);
 		final TextView txtBreed = (TextView) findViewById(R.id.txtBreed);
@@ -53,12 +54,15 @@ public class DogDetailActivity extends Activity {
 		final TextView txtGender = (TextView) findViewById(R.id.txtGender);
 		final TextView txtAge = (TextView) findViewById(R.id.txtAge);
 		ImageButton btnDel = (ImageButton) findViewById(R.id.btnDelete);
-		final String path ;
-		Bundle b = getIntent().getExtras();		
-		path = b.getString("path");
-		age = new AgeCalculation();
+		ImageButton btnEdit = (ImageButton) findViewById(R.id.btnEdit);
+		final int dogID ;
+		Bundle b = getIntent().getExtras();
 		
-		
+		dogID =b.getInt("dogID");
+		//age = new AgeCalculation();
+		//Cursor cursor = myDb.getDogDetail(dogID);
+		sDog dog = myDb.getDogData(dogID);
+		//Toast.makeText(this, String.valueOf(dogID), Toast.LENGTH_SHORT).show();
 		
 		// /cam
 				mImageView = (ImageView) findViewById(R.id.imageView1);
@@ -77,22 +81,45 @@ public class DogDetailActivity extends Activity {
 				mAlbumStorageDirFactory = new BaseAlbumDirFactory();
 				// }
 		// /end cam
-				try {
+				
+				////
+	
+			    	name = dog.gName();
+			    	//name = cursor.getString(cursor.getColumnIndex(DBClass.KEY_NAME));
+					gender = dog.gGender();
+					birth = dog.gBirth();
+					color =dog.gColor();
+					breed = dog.gBreed();
+					weight = dog.gWeight();
+					txtName.setText(name);
+					txtGender.setText(gender);
+					txtBirth.setText(birth);
+					txtColor.setText(color);
+					txtBreed.setText(breed);
+					txtWeight.setText(weight);
+				    //cursor.moveToNext();
+			    
+			   // cursor.close();
+				////
+				
+				
+				
+		/*		try {
 	
 					File file = new File(path);
 					// FileOutputStream outputStream;
-					/*** if exists create text file ***/
+					*//*** if exists create text file ***//*
 					
 					
 					FileInputStream fIn = new FileInputStream(file);
 					BufferedReader reader = new BufferedReader(
 							new InputStreamReader(fIn));
 					name = reader.readLine();
-					String gender = reader.readLine();
+					gender = reader.readLine();
 					birth = reader.readLine();
-					String color = reader.readLine();
-					String breed = reader.readLine();
-					String weight = reader.readLine();
+					color = reader.readLine();
+					breed = reader.readLine();
+					weight = reader.readLine();
 					txtName.setText(name);
 					txtGender.setText(gender);
 					txtBirth.setText(birth);
@@ -109,7 +136,7 @@ public class DogDetailActivity extends Activity {
 					Toast.makeText(DogDetailActivity.this,
 							"Failed!" + e.getMessage(), Toast.LENGTH_LONG)
 							.show();
-				}
+				}*/
 				
 				
 				
@@ -130,19 +157,20 @@ public class DogDetailActivity extends Activity {
 				}
 				//calculate age
 							
-				String[] splitBirth =birth.split(" ");
-		
-				int year = Integer.parseInt(splitBirth[5]);
-				int month = Integer.parseInt(splitBirth[3]);
-				int day = Integer.parseInt(splitBirth[1]);
-				age.getCurrentDate();
-				age.setDateOfBirth(year, month-1, day);
+				/*String[] splitBirth =birth.split("-");
+				
+				int year = Integer.parseInt(splitBirth[0]);
+				int month = Integer.parseInt(splitBirth[1]);
+				int day = Integer.parseInt(splitBirth[2]);
+				//Toast.makeText(this, year, Toast.LENGTH_SHORT).show();
+				//age.getCurrentDate();
+				age.setDateOfBirth(year, month, day);
 				age.calcualteYear();
 				age.calcualteMonth();
 				age.calcualteDay();
 				String resultAge = age.getResult();
 				txtAge.setText(resultAge);
-				
+				*/
 				//end calculate age
 				
 // dialog box
@@ -155,7 +183,18 @@ public class DogDetailActivity extends Activity {
 							public void onClick(DialogInterface dialog,
 									int which) {
 
-								File file = new File(path);
+								long flg = myDb.deleteDog(dogID);
+					           	if(flg > 0)
+					           	{
+					           	 Toast.makeText(DogDetailActivity.this,"ลบข้อมูลสำเร็จ",
+					           			 	Toast.LENGTH_SHORT).show(); 
+					           	}
+					           	else
+					           	{
+					              	 Toast.makeText(DogDetailActivity.this,"ลบข้อมูลไม่สำเร็จ",
+					        			 	Toast.LENGTH_SHORT).show(); 
+					           	}
+								/*File file = new File(path);
 								boolean deleted = file.delete();
 								Toast.makeText(DogDetailActivity.this,
 								"ลบ  "+name+" แล้ว", Toast.LENGTH_SHORT).show();
@@ -164,7 +203,7 @@ public class DogDetailActivity extends Activity {
 								} catch (IOException e) {
 									// TODO Auto-generated catch block
 									e.printStackTrace();
-								}
+								}*/
 								finish();
 							}
 						});
@@ -187,19 +226,25 @@ public class DogDetailActivity extends Activity {
 					@Override
 					public void onClick(View arg0) {										
 						box.show();
-						/*
-						File file = new File(path);
-						boolean deleted = file.delete();
-						Toast.makeText(DogDetailActivity.this,
-						"ลบ "+name+" แล้ว", Toast.LENGTH_SHORT).show();
-						try {
-							deleteImageFile();
-						} catch (IOException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
+						
+					}
+		 
+				});
+				//Edit button
+				btnEdit.setOnClickListener(new OnClickListener() {
+		 
+					@Override
+					public void onClick(View arg0) {										
+						Intent i = new Intent(DogDetailActivity.this, EditActivity.class);
+						i.putExtra("name", name);
+						i.putExtra("birth", birth);
+						i.putExtra("gender", gender);
+						i.putExtra("breed", breed);
+						i.putExtra("weight", weight);
+						i.putExtra("color", color);
+						i.putExtra("dogID", dogID);
+						startActivity(i);
 						finish();
-		 				*/
 					}
 		 
 				});
@@ -477,14 +522,10 @@ public class DogDetailActivity extends Activity {
 			 * else { picBtn.setText( getText(R.string.cannot).toString() + " " +
 			 * /*picBtn.getText()); picBtn.setClickable(false);
 			 * 
-			 * }
-			 */
+			 	 , selection, selectionArgs, null);
+		//end del event
+		*/
 		}
-
-		// ///end camera/////
 		
 		
-	 
-		
-
 }

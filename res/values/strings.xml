@@ -18,5 +18,40 @@
     <string name="cannot">Cannot</string>
     <string name="album_name">Image</string>
     <string name="title_activity_dog_detail">DogDetailActivity</string>
+    <string name="customize">Customize</string>
+    <string name="show_dialog">Show Dialog</string>
+    <string name="undo">Undo</string>
+
+    <string-array name="breed_array">
+        <item>ชิวาวา</item>
+        <item>ปอมเมอเรเนียน</item>
+        <item>ชิสุ</item>
+        <item>บีเกิล</item>
+        <item>ยอร์คเชียร์ เทอร์เรีย</item>
+        <item>ปั๊ก</item>
+        <item>บูลด็อก</item>
+        <item>ไซบีเรียน ฮีสกี้</item>
+        <item>โกลเด้น รีทรีฟเวอร์</item>
+        <item>ลาบาดอร์ รีทรีฟเวอร์</item>
+        <item>บางแก้ว</item>
+    </string-array>
+    <string-array name="color_array">
+        <item>ขาว</item>
+        <item>ดำ</item>
+        <item>เทา</item>
+        <item>น้ำตาล</item>
+    </string-array>
+
+    <string name="title_activity_edit">EditActivity</string>
+    <string name="title_activity_cal_vac">CalVacActivity</string>
+    <string name="title_activity_vac_cal">VacCalActivity</string>
+    <string name="title_activity_his_cal">HisCalActivity</string>
+    <string name="title_activity_custom_his">CustomHisActivity</string>
+    <string name="title_activity_his_add">HisAddActivity</string>
+    <string name="title_activity_his_edit">HisEditActivity</string>
+    <string name="title_activity_vac_alert">VacAlertActivity</string>
+    <string name="title_activity_post">PostActivity</string>
+    <string name="title_activity_his_list">HisListActivity</string>
+    <string name="title_activity_vac_com">VacComActivity</string>
 
 </resources>
